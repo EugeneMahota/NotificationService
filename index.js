@@ -6,8 +6,9 @@ const config = require('./config');
 const app = express();
 config.express(app);
 config.routes(app);
-
 const {appPort, mongoUrl} = config.app;
+
+app.use(express.static('public'));
 
 mongoose.connect(mongoUrl, {useNewUrlParser: true})
     .then(() => {
@@ -18,3 +19,5 @@ mongoose.connect(mongoUrl, {useNewUrlParser: true})
     .catch(err => {
         console.log(err);
     });
+
+mongoose.set('useFindAndModify', false);

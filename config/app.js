@@ -1,4 +1,5 @@
 module.exports = {
+    baseHref: 'http://localhost:3000',
     appPort: 3000,
     mongoUrl: 'mongodb://localhost:27017/notification-service',
     jwt: {
@@ -6,11 +7,11 @@ module.exports = {
         tokens: {
             access: {
                 type: 'access',
-                expiresIn: '2m'
+                expiresIn: '5000m'
             },
             refresh: {
                 type: 'refresh',
-                expiresIn: '3m'
+                expiresIn: '6000m'
             }
         }
     }
