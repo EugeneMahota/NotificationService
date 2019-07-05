@@ -4,8 +4,10 @@ require('./app/models');
 const config = require('./config');
 
 const app = express();
+config.cors(app);
 config.express(app);
 config.routes(app);
+
 const {appPort, mongoUrl} = config.app;
 
 app.use(express.static('public'));

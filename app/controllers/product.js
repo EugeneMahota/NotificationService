@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 const CategoryProduct = mongoose.model('CategoryProduct');
+const parserError = require('../helpers/parserError');
 
 const {baseHref} = require('../../config/app');
 
@@ -24,7 +25,7 @@ const create = (req, res) => {
         .then(product => {
             return CategoryProduct.findOneAndUpdate({_id: product.category}, {$push: {product: product._id}})
         })
-        .then(category => res.json(category))
+        .then(category => res.json(parserError(category)))
         .catch(err => res.json(err));
 };
 
@@ -45,7 +46,7 @@ const update = (req, res) => {
         .then(category => {
             return CategoryProduct.findOneAndUpdate({_id: newProduct.category}, {$push: {product: newProduct.id}})
         })
-        .then(category => res.json(category))
+        .then(category => res.json(parserError(category)))
         .catch(err => res.json(err));
 };
 
@@ -56,7 +57,7 @@ const remove = (req, res) => {
             deleteImage(product);
             return CategoryProduct.findOneAndUpdate({_id: product.category}, {$pull: {product: product._id}});
         })
-        .then(category => res.json(category))
+        .then(category => res.json(parserError(category)))
         .catch(err => res.json(err));
 };
 

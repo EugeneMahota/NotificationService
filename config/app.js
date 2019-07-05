@@ -7,12 +7,18 @@ module.exports = {
         tokens: {
             access: {
                 type: 'access',
-                expiresIn: '5000m'
+                expiresIn: '1000m'
             },
             refresh: {
                 type: 'refresh',
-                expiresIn: '6000m'
+                expiresIn: '100000m'
             }
         }
+    },
+    corsOptions: {
+        origin: 'http://localhost:4200',
+        optionsSuccessStatus: 200,
+        methods: "GET,PUT,POST,DELETE",
+        allowedHeaders: ['Content-Type', 'application/json', 'Accept', 'multipart/form-data', 'Authorization']
     }
 };

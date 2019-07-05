@@ -15,10 +15,9 @@ module.exports = (req, res, next) => {
             if (payload.type !== 'access') {
                 res.status(401).json({msg: 'Неверный токен!'});
             }
+            next();
         } catch (err) {
             res.status(401).json({msg: 'Ошибка авторизации!'})
         }
     }
-
-    next();
 };

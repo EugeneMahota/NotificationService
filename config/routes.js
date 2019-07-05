@@ -5,6 +5,7 @@ const service = require('../app/controllers/service');
 const order = require('../app/controllers/order');
 const categoryProduct = require('../app/controllers/categoryProduct');
 const product = require('../app/controllers/product');
+const request = require('../app/controllers/request');
 
 const authMiddleware = require('../app/middleware/auth');
 const uploadService = require('../app/middleware/uploadService');
@@ -44,4 +45,9 @@ module.exports = (app) => {
     app.post('/product', authMiddleware, uploadProduct.single('image'), product.create);
     app.put('/product', authMiddleware, uploadProduct.single('image'), product.update);
     app.delete('/product/:id', authMiddleware, product.remove);
+
+    app.get('/request', authMiddleware, request.getAll);
+    app.post('/request', authMiddleware, request.create);
+    app.put('/request', authMiddleware, request.update);
+    app.delete('/request/:id', authMiddleware, request.remove);
 };

@@ -21,12 +21,12 @@ const updateTokens = (userId) => {
 const signIn = (req, res) => {
     const {email, password} = req.body;
 
-    User.findOne({email})
+    User.findOne({email: email.toLowerCase()})
         .exec()
         .then(user => {
 
             if (!user) {
-                res.status(401).json({msg: 'Пользователь не найден!'})
+                res.status(401).json('Пользователь не найден!')
             }
 
             const isValid = bCrypt.compareSync(password, user.password);
@@ -34,7 +34,7 @@ const signIn = (req, res) => {
             if (isValid) {
                 updateTokens(user._id).then(tokens => res.json(tokens));
             } else {
-                res.status(401).json({msg: 'Пароль введен неверно!'})
+                res.status(401).json('Пароль введен неверно!')
             }
         })
         .catch(err => res.status(500).json(err));
@@ -47,7 +47,7 @@ const refreshTokens = (req, res) => {
     try {
         payload = jwt.verify(refreshToken, secret);
         if (payload.type !== 'refresh') {
-            res.status(400).json({msg: 'Неверный токен!'});
+            res.status(400).json('Неверный токен!');
         }
         Token.findOne({tokenId: payload.id})
             .exec()
@@ -63,9 +63,9 @@ const refreshTokens = (req, res) => {
 
     } catch (err) {
         if (err instanceof jwt.TokenExpiredError) {
-            res.status(400).json({msg: 'Неверный токен!'});
+            res.status(400).json('Неверный токен!');
         } else if (err instanceof jwt.JsonWebTokenError) {
-            res.status(400).json({msg: 'Неверный токен!'});
+            res.status(400).json('Неверный токен!');
         }
     }
 };
