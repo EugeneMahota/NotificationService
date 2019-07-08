@@ -13,13 +13,14 @@ const getAll = (req, res) => {
 
 const create = (req, res) => {
     req.body.date = new Date();
+    req.body.status = 'new';
     Request.create(req.body)
         .then(request => res.json(parserError(request)))
         .catch(err => res.status(500).json(err))
 };
 
 const update = (req, res) => {
-    Request.updateOne({_id: req.body.id}, req.body)
+    Request.findOneAndUpdate({_id: req.body.id}, req.body)
         .exec()
         .then(request => res.json(parserError(request)))
         .catch(err => res.status(500).json(err))

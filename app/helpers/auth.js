@@ -5,9 +5,10 @@ const {tokens, secret} = require('../../config/app').jwt;
 const mongoose = require('mongoose');
 const Token = mongoose.model('Token');
 
-const generateAccessToken = (userId) => {
+const generateAccessToken = (userId, user) => {
     const payload = {
         userId,
+        user,
         type: tokens.access.type
     };
     const options = {expiresIn: tokens.access.expiresIn};

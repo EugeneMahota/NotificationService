@@ -26,6 +26,7 @@ const getByTelephone = (req, res) => {
 
 const create = (req, res) => {
     req.body.date = new Date();
+    req.body.status = 'new';
     Order.create(req.body)
         .then(order => res.json(parserError(order)))
         .catch(err => res.status(500).json(err));
