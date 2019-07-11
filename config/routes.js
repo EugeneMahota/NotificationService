@@ -12,8 +12,6 @@ const uploadService = require('../app/middleware/uploadService');
 const uploadProduct = require('../app/middleware/uploadProduct');
 
 module.exports = (app) => {
-    // app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
-
     app.post('/login', auth.signIn);
     app.post('/refresh-tokens', auth.refreshTokens);
 
@@ -38,6 +36,7 @@ module.exports = (app) => {
     app.post('/order', order.create);
     app.put('/order', authMiddleware, order.update);
     app.delete('/order/:id', authMiddleware, order.remove);
+    app.ws('/', order.ws);
 
     app.get('/category-product', authMiddleware, categoryProduct.getAll);
     app.post('/category-product', authMiddleware, categoryProduct.create);

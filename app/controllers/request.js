@@ -3,8 +3,11 @@ const Request = mongoose.model('Request');
 const parserError = require('../helpers/parserError');
 
 const getAll = (req, res) => {
+    var dateStart = new Date(+new Date(req.query.dateStart) - 10800000);
+    var dateEnd = new Date(+new Date(req.query.dateEnd) - 10800000);
+
     Request.find()
-        .where('date').gt(req.query.dateStart).lt(req.query.dateEnd)
+        .where('date').gt(dateStart).lt(dateEnd)
         .sort([['date', -1]])
         .exec()
         .then(request => res.json(request))

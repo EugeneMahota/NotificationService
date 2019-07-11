@@ -5,6 +5,8 @@ const config = require('./config');
 const path = require('path');
 
 const app = express();
+const expressWs = require('express-ws')(app);
+
 config.cors(app);
 config.express(app);
 config.routes(app);
@@ -12,7 +14,6 @@ config.routes(app);
 const {appPort, mongoUrl} = config.app;
 
 app.use(express.static('public'));
-
 app.use(express.static('view'));
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname + '/view/index')));
 

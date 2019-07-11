@@ -1,12 +1,20 @@
 const mongoose = require('mongoose');
 const Order = mongoose.model('Order');
+const Request = mongoose.model('Request');
 const parserError = require('../helpers/parserError');
 
+var wsClients = [];
+var countNewOrder = 0;
+var countNewRequest = 0;
+
 const getAll = (req, res) => {
+    var dateStart = new Date(+new Date(req.query.dateStart) - 10800000);
+    var dateEnd = new Date(+new Date(req.query.dateEnd) - 10800000);
+
     Order.find()
         .populate('service')
         .populate({path: 'service', populate: {path: 'category'}})
-        .where('date').gt(req.query.dateStart).lt(req.query.dateEnd)
+        .where('date').gt(dateStart).lt(dateEnd)
         .sort([['date', -1]])
         .exec()
         .then(order => res.json(order))
@@ -48,10 +56,66 @@ const remove = (req, res) => {
         .catch(err => res.status(500).json(err));
 };
 
+const ws = (ws, req) => {
+
+    wsClients.push(ws);
+
+    ws.on('message', (msg) => {
+        const data = JSON.parse(msg);
+
+        var dateEnd = new Date();
+        var dateStart = new Date().setMonth(dateEnd.getMonth() - 2);
+
+        if (data.event === 'addOrder') {
+            countNewOrder++;
+            wsClients.forEach(clients => {
+                if (clients.readyState === 1) {
+                    clients.send(JSON.stringify({event: 'updateOrder', data: countNewOrder}))
+                }
+            });
+        }
+        if (data.event === 'addRequest') {
+            countNewRequest++;
+            wsClients.forEach(clients => {
+                if (clients.readyState === 1) {
+                    clients.send(JSON.stringify({event: 'updateRequest', data: countNewRequest}))
+                }
+            });
+        }
+
+        if (data.event === 'checkOrder') {
+            Order.find({status: 'new'})
+                .where('date').gt(dateStart).lt(dateEnd)
+                .exec()
+                .then(order => {
+                    countNewOrder = order.length;
+                    ws.send({event: 'updateOrder', data: countNewOrder});
+                })
+                .catch(err => ws.send(JSON.stringify({event: 'updateOrder', data: countNewOrder})));
+        }
+
+        if (data.event === 'checkRequest') {
+            Request.find({status: 'new'})
+                .where('date').gt(dateStart).lt(dateEnd)
+                .exec()
+                .then(request => {
+                    countNewRequest = request.length;
+                    ws.send({event: 'updateRequest', data: countNewRequest});
+                })
+                .catch(err => ws.send(JSON.stringify({event: 'updateRequest', data: countNewRequest})));
+        }
+    });
+
+    ws.on('close', () => {
+        wsClients.splice(wsClients.indexOf(ws), 1);
+    });
+};
+
 module.exports = {
     getAll,
     getByTelephone,
     create,
     update,
-    remove
+    remove,
+    ws
 };
