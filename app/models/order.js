@@ -7,7 +7,8 @@ const OrderSchema = new mongoose.Schema({
     date: {type: Date, required: true},
     status: {type: String, required: true},
     service: {type: Schema.Types.ObjectId, ref: 'Service'},
-    info: {type: String, required: true}
+    info: {type: String},
+    price: {type: Number, required: true}
 });
 
 mongoose.model('Order', OrderSchema);

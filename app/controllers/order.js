@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Order = mongoose.model('Order');
 const Request = mongoose.model('Request');
+const Service = mongoose.model('Service');
+
 const parserError = require('../helpers/parserError');
 
 var wsClients = [];
@@ -33,9 +35,19 @@ const getByTelephone = (req, res) => {
 };
 
 const create = (req, res) => {
-    req.body.date = new Date();
-    req.body.status = 'new';
-    Order.create(req.body)
+    var order = req.body;
+
+    order.date = new Date();
+    order.status = 'new';
+
+
+    console.log(order);
+    Service.findOne({_id: order.service})
+        .exec()
+        .then(service => {
+            order.price = service.price;
+            return Order.create(order);
+        })
         .then(order => res.json(parserError(order)))
         .catch(err => res.status(500).json(err));
 };
