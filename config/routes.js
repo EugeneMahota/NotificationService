@@ -6,10 +6,12 @@ const order = require('../app/controllers/order');
 const categoryProduct = require('../app/controllers/categoryProduct');
 const product = require('../app/controllers/product');
 const request = require('../app/controllers/request');
+const report = require('../app/controllers/report');
 
 const authMiddleware = require('../app/middleware/auth');
 const uploadService = require('../app/middleware/uploadService');
 const uploadProduct = require('../app/middleware/uploadProduct');
+const uploadCategory = require('../app/middleware/uploadCategory');
 
 module.exports = (app) => {
     app.post('/login', auth.signIn);
@@ -21,9 +23,10 @@ module.exports = (app) => {
     app.put('/user', authMiddleware, user.update);
     app.delete('/user/:id', authMiddleware, user.remove);
 
-    app.get('/category', category.getAll);
-    app.post('/category', authMiddleware, category.create);
-    app.put('/category', authMiddleware, category.update);
+    app.get('/category-and-service', category.getCategoryAndService);
+    app.get('/category', category.getCategoryAndService);
+    app.post('/category', authMiddleware, uploadCategory.single('image'), category.create);
+    app.put('/category', authMiddleware, uploadCategory.single('image'), category.update);
     app.delete('/category/:id', authMiddleware, category.remove);
 
     app.get('/service', service.getAll);
@@ -52,4 +55,7 @@ module.exports = (app) => {
     app.post('/request', request.create);
     app.put('/request', authMiddleware, request.update);
     app.delete('/request/:id', authMiddleware, request.remove);
+
+    app.get('/report', authMiddleware, report.getReportForOrder);
+    app.post('/report', authMiddleware, report.getReportForOrderCharts)
 };

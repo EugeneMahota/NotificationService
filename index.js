@@ -15,7 +15,7 @@ const {appPort, mongoUrl} = config.app;
 
 app.use(express.static('public'));
 app.use(express.static('view'));
-app.get('/*', (req, res) => res.sendFile(path.join(__dirname + '/view/index')));
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname + '/view/')));
 
 
 mongoose.connect(mongoUrl, {useNewUrlParser: true})

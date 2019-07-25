@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const CategorySchema = new mongoose.Schema({
     name: {type: String, required: true},
+    image: {type: String},
     service: [{type: Schema.Types.ObjectId, ref: 'Service'}]
 });
 
