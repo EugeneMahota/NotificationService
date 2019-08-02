@@ -7,6 +7,7 @@ const categoryProduct = require('../app/controllers/categoryProduct');
 const product = require('../app/controllers/product');
 const request = require('../app/controllers/request');
 const report = require('../app/controllers/report');
+const sale = require('../app/controllers/sale');
 
 const authMiddleware = require('../app/middleware/auth');
 const uploadService = require('../app/middleware/uploadService');
@@ -41,12 +42,14 @@ module.exports = (app) => {
     app.delete('/order/:id', authMiddleware, order.remove);
     app.ws('/', order.ws);
 
-    app.get('/category-product', authMiddleware, categoryProduct.getAll);
+    app.get('/category-product', categoryProduct.getAll);
+    app.get('/category-product-list', authMiddleware, categoryProduct.getCategory);
     app.post('/category-product', authMiddleware, categoryProduct.create);
     app.put('/category-product', authMiddleware, categoryProduct.update);
     app.delete('/category-product/:id', authMiddleware, categoryProduct.remove);
 
     app.get('/product', authMiddleware, product.getAll);
+    app.put('/product/all', authMiddleware, product.updateMany);
     app.post('/product', authMiddleware, uploadProduct.single('image'), product.create);
     app.put('/product', authMiddleware, uploadProduct.single('image'), product.update);
     app.delete('/product/:id', authMiddleware, product.remove);
@@ -57,5 +60,11 @@ module.exports = (app) => {
     app.delete('/request/:id', authMiddleware, request.remove);
 
     app.get('/report', authMiddleware, report.getReportForOrder);
-    app.post('/report', authMiddleware, report.getReportForOrderCharts)
+    app.post('/report', authMiddleware, report.getReportForOrderCharts);
+
+    app.get('/sale', authMiddleware, sale.getAllSale);
+    app.get('/sale/:telephone', authMiddleware, sale.getSaleByTelephone);
+    app.post('/sale', sale.createSale);
+    app.put('/sale', authMiddleware, sale.updateSale);
+    app.delete('/sale/:id', authMiddleware, sale.removeSale);
 };

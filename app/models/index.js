@@ -6,3 +6,5 @@ require('./service');
 require('./order');
 require('./product');
 require('./request');
+require('./saleProduct');
+require('./sale');

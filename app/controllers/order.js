@@ -10,8 +10,8 @@ var countNewOrder = 0;
 var countNewRequest = 0;
 
 const getAll = (req, res) => {
-    var dateStart = new Date(+new Date(req.query.dateStart) - 10800000);
-    var dateEnd = new Date(+new Date(req.query.dateEnd) - 10800000);
+    const dateStart = new Date(+new Date(req.query.dateStart) - 10800000);
+    const dateEnd = new Date(+new Date(req.query.dateEnd) - 10800000);
 
     Order.find()
         .populate('service')

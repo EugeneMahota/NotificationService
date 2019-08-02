@@ -35,6 +35,7 @@ const update = (req, res) => {
     }
 
     const newProduct = req.body;
+    console.log(req.body);
     Product.findOneAndUpdate({_id: newProduct.id}, newProduct)
         .exec()
         .then(product => {
@@ -48,6 +49,23 @@ const update = (req, res) => {
         })
         .then(category => res.json(parserError(category)))
         .catch(err => res.json(err));
+};
+
+const updateMany = (req, res) => {
+    const product = req.body;
+    var counter = 0;
+
+    product.forEach(function (data, index, array) {
+        Product.findOneAndUpdate({_id: data.id}, data)
+            .exec()
+            .then(category => {
+                counter++;
+                if (array.length === counter) {
+                    res.json({status: 'Ok', msg: ''})
+                }
+            })
+            .catch(err => res.status(500).json(err));
+    });
 };
 
 const remove = (req, res) => {
@@ -70,5 +88,6 @@ module.exports = {
     getAll,
     create,
     update,
-    remove
+    remove,
+    updateMany
 };

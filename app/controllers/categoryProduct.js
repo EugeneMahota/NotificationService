@@ -10,6 +10,13 @@ const getAll = (req, res) => {
         .catch(err => res.status(500).json(err));
 };
 
+const getCategory = (req, res) => {
+    CategoryProduct.find()
+        .exec()
+        .then(category => res.json(category))
+        .catch(err => res.status(500).json(err));
+};
+
 const create = (req, res) => {
     CategoryProduct.create(req.body)
         .then(category => res.json(parserError(category)))
@@ -18,7 +25,7 @@ const create = (req, res) => {
 
 const update = (req, res) => {
     const category = req.body;
-    CategoryProduct.updateOne({_id: category.id} ,category)
+    CategoryProduct.findOneAndUpdate({_id: category.id} ,category)
         .exec()
         .then(category => res.json(parserError(category)))
         .catch(err => res.status(500).json(err));
@@ -35,5 +42,6 @@ module.exports = {
     getAll,
     create,
     update,
-    remove
+    remove,
+    getCategory
 };
