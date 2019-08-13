@@ -43,6 +43,8 @@ const createSale = (req, res) => {
                         name: newSale.name,
                         telephone: newSale.telephone,
                         info: newSale.info,
+                        address: newSale.address,
+                        flPickup: newSale.flPickup,
                         status: 'new',
                         date: new Date(),
                         product: listSaleProduct

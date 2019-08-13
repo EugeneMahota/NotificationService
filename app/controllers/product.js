@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 const CategoryProduct = mongoose.model('CategoryProduct');
+const SaleProduct = mongoose.model('SaleProduct');
 const parserError = require('../helpers/parserError');
 
 const {baseHref} = require('../../config/app');
@@ -69,13 +70,27 @@ const updateMany = (req, res) => {
 };
 
 const remove = (req, res) => {
-    Product.findOneAndDelete({_id: req.params.id})
+    Product.findOne({_id: req.params.id})
         .exec()
         .then(product => {
-            deleteImage(product);
-            return CategoryProduct.findOneAndUpdate({_id: product.category}, {$pull: {product: product._id}});
+            return SaleProduct.find({product: product._id})
         })
-        .then(category => res.json(parserError(category)))
+        .then(saleProduct => {
+
+            if (saleProduct.length === 0) {
+                Product.findOneAndDelete({_id: req.params.id})
+                    .exec()
+                    .then(product => {
+                        deleteImage(product);
+                        return CategoryProduct.findOneAndUpdate({_id: product.category}, {$pull: {product: product._id}});
+                    })
+                    .then(category => res.json(parserError(category)))
+                    .catch(err => res.json(err));
+
+            } else {
+                res.json({status: 'Error', msg: 'Товар привязан к заказу!'})
+            }
+        })
         .catch(err => res.json(err));
 };
 

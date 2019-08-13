@@ -8,3 +8,5 @@ require('./product');
 require('./request');
 require('./saleProduct');
 require('./sale');
+require('./address');
+require('./section');

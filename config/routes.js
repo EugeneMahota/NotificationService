@@ -8,6 +8,8 @@ const product = require('../app/controllers/product');
 const request = require('../app/controllers/request');
 const report = require('../app/controllers/report');
 const sale = require('../app/controllers/sale');
+const address = require('../app/controllers/address');
+const section = require('../app/controllers/section');
 
 const authMiddleware = require('../app/middleware/auth');
 const uploadService = require('../app/middleware/uploadService');
@@ -26,6 +28,7 @@ module.exports = (app) => {
 
     app.get('/category-and-service', category.getCategoryAndService);
     app.get('/category', category.getCategoryAndService);
+    app.get('/category/:section', category.getCategoryBySection);
     app.post('/category', authMiddleware, uploadCategory.single('image'), category.create);
     app.put('/category', authMiddleware, uploadCategory.single('image'), category.update);
     app.delete('/category/:id', authMiddleware, category.remove);
@@ -48,7 +51,7 @@ module.exports = (app) => {
     app.put('/category-product', authMiddleware, categoryProduct.update);
     app.delete('/category-product/:id', authMiddleware, categoryProduct.remove);
 
-    app.get('/product', authMiddleware, product.getAll);
+    app.get('/product', product.getAll);
     app.put('/product/all', authMiddleware, product.updateMany);
     app.post('/product', authMiddleware, uploadProduct.single('image'), product.create);
     app.put('/product', authMiddleware, uploadProduct.single('image'), product.update);
@@ -67,4 +70,14 @@ module.exports = (app) => {
     app.post('/sale', sale.createSale);
     app.put('/sale', authMiddleware, sale.updateSale);
     app.delete('/sale/:id', authMiddleware, sale.removeSale);
+
+    app.get('/address', address.getAll);
+    app.post('/address', authMiddleware, address.create);
+    app.put('/address', authMiddleware, address.update);
+    app.delete('/address/:id', authMiddleware, address.remove);
+
+    app.get('/section', section.getAll);
+    app.post('/section', authMiddleware, section.create);
+    app.put('/section', authMiddleware, section.update);
+    app.delete('/section/:id', authMiddleware, section.remove);
 };

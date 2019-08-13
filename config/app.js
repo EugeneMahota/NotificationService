@@ -16,7 +16,7 @@ module.exports = {
         }
     },
     corsOptions: {
-        origin: 'http://localhost:4200',
+        origin: '*',
         optionsSuccessStatus: 200,
         methods: "GET,PUT,POST,DELETE",
         allowedHeaders: ['Content-Type', 'application/json', 'Accept', 'multipart/form-data', 'Authorization']

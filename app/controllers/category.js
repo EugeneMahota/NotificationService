@@ -8,6 +8,14 @@ const fs = require('fs');
 const {promisify} = require('util');
 const unlinkAsync = promisify(fs.unlink);
 
+const getCategoryBySection = (req, res) => {
+    Category.find({section: req.params.section})
+        .populate('service')
+        .exec()
+        .then(category => res.json(category))
+        .catch(err => res.status(500).json(err));
+};
+
 const getCategoryAndService = (req, res) =>
     Category.find()
         .populate('service')
@@ -30,6 +38,7 @@ const create = (req, res) => {
         req.body.image = '';
     }
 
+    console.log(req.body);
     Category.create(req.body)
         .then(category => res.json(parserError(category)))
         .catch(err => res.status(500).json(err));
@@ -71,6 +80,7 @@ function deleteImage(category) {
 }
 
 module.exports = {
+    getCategoryBySection,
     getCategoryAndService,
     getCategory,
     create,

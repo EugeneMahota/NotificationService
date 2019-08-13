@@ -40,8 +40,6 @@ const create = (req, res) => {
     order.date = new Date();
     order.status = 'new';
 
-
-    console.log(order);
     Service.findOne({_id: order.service})
         .exec()
         .then(service => {
