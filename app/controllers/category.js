@@ -11,6 +11,7 @@ const unlinkAsync = promisify(fs.unlink);
 const getCategoryBySection = (req, res) => {
     Category.find({section: req.params.section})
         .populate('service')
+        .sort([['number', 1]])
         .exec()
         .then(category => res.json(category))
         .catch(err => res.status(500).json(err));
@@ -19,12 +20,14 @@ const getCategoryBySection = (req, res) => {
 const getCategoryAndService = (req, res) =>
     Category.find()
         .populate('service')
+        .sort([['number', 1]])
         .exec()
         .then(category => res.json(category))
         .catch(err => res.status(500).json(err));
 
 const getCategory = (req, res) => {
     Category.find()
+        .sort([['number', 1]])
         .exec()
         .then(category => res.json(category))
         .catch(err => res.status(500).json(err));
@@ -38,7 +41,6 @@ const create = (req, res) => {
         req.body.image = '';
     }
 
-    console.log(req.body);
     Category.create(req.body)
         .then(category => res.json(parserError(category)))
         .catch(err => res.status(500).json(err));

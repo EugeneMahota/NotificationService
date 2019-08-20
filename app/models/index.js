@@ -10,3 +10,4 @@ require('./saleProduct');
 require('./sale');
 require('./address');
 require('./section');
+require('./configApp');

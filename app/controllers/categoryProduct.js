@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const CategoryProduct = mongoose.model('CategoryProduct');
+const Product = mongoose.model('Product');
 const parserError = require('../helpers/parserError');
 
 const getAll = (req, res) => {
     CategoryProduct.find()
         .populate('product')
+        .sort([['number', 1]])
         .exec()
         .then(category => res.json(category))
         .catch(err => res.status(500).json(err));
@@ -12,6 +14,7 @@ const getAll = (req, res) => {
 
 const getCategory = (req, res) => {
     CategoryProduct.find()
+        .sort([['number', 1]])
         .exec()
         .then(category => res.json(category))
         .catch(err => res.status(500).json(err));
@@ -34,7 +37,9 @@ const update = (req, res) => {
 const remove = (req, res) => {
     CategoryProduct.findOneAndDelete({_id: req.params.id})
         .exec()
-        .then(category => res.json(parserError(category)))
+        .then(category => {
+            res.json(parserError(category));
+        })
         .catch(err => res.status(500).json(err));
 };
 

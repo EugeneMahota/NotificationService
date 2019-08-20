@@ -10,11 +10,13 @@ const report = require('../app/controllers/report');
 const sale = require('../app/controllers/sale');
 const address = require('../app/controllers/address');
 const section = require('../app/controllers/section');
+const configApp = require('../app/controllers/configApp');
 
 const authMiddleware = require('../app/middleware/auth');
 const uploadService = require('../app/middleware/uploadService');
 const uploadProduct = require('../app/middleware/uploadProduct');
 const uploadCategory = require('../app/middleware/uploadCategory');
+const uploadConfig = require('../app/middleware/uploadConfig');
 
 module.exports = (app) => {
     app.post('/login', auth.signIn);
@@ -66,7 +68,7 @@ module.exports = (app) => {
     app.post('/report', authMiddleware, report.getReportForOrderCharts);
 
     app.get('/sale', authMiddleware, sale.getAllSale);
-    app.get('/sale/:telephone', authMiddleware, sale.getSaleByTelephone);
+    app.get('/sale/:telephone', sale.getSaleByTelephone);
     app.post('/sale', sale.createSale);
     app.put('/sale', authMiddleware, sale.updateSale);
     app.delete('/sale/:id', authMiddleware, sale.removeSale);
@@ -80,4 +82,17 @@ module.exports = (app) => {
     app.post('/section', authMiddleware, section.create);
     app.put('/section', authMiddleware, section.update);
     app.delete('/section/:id', authMiddleware, section.remove);
+
+    app.get('/config', configApp.getAll);
+    app.post('/config', authMiddleware, uploadConfig.fields([
+        {name: 'logoLight', maxCount: 1},
+        {name: 'logoDark', maxCount: 1},
+        {name: 'imageHeader', maxCount: 1}
+        ]), configApp.create);
+    app.put('/config', authMiddleware, uploadConfig.fields([
+        {name: 'logoLight', maxCount: 1},
+        {name: 'logoDark', maxCount: 1},
+        {name: 'imageHeader', maxCount: 1}
+    ]), configApp.update);
+    app.delete('/config/:id', authMiddleware, configApp.remove);
 };
