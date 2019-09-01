@@ -4,6 +4,7 @@ const parserError = require('../helpers/parserError');
 
 const getAll = (req, res) =>
     Section.find()
+        .sort([['number', 1]])
         .exec()
         .then(section => res.json(section))
         .catch(err => res.status(500).json(err));

@@ -3,19 +3,39 @@
   <component name="ChangeListManager">
     <list default="true" id="1778256a-509d-4330-a990-2a0b0458b1b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/categoryProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categoryProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/categoryProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/categoryProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/section.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/section.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/category-image/15653496982191706234960_w640_h640_blok-upravleniya-polster.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/category-image/1565617239889568296305f692151ee1aad07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/service-image/1565611257710laptope_013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/section.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565292197388laptope_013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565349447978320135750_w640_h640_televizor-sensor-sle22f55m4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565349524165microwave_PNG15726.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565349756659pro_tig_200_p_dsp_w212_a_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565349836171fad80564f83394c56858d2360f2418de.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565349988265w256h2561389814427PrinterHPLaserJetProfessionalP1600Series.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565350105827380637408_avtonomnyj-elektronnyj-zamok.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565350168955kn_ce206f36_wifi-v2-17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565350527400u-files-catalog-product-193_700-650x650.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565350642578105862_p_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/1565694683677iphone-2854322_960_720.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category-image/15658739881016218_big.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/config/1566309835239background-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1561999530961mobile_and_24hr_service-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/15619995466041.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1562182784397xxx031-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1562432366733mobile_and_24hr_service-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1562432388486mobile_and_24hr_service-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1562432395010mobile_and_24hr_service-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1562432398969mobile_and_24hr_service-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1562490895074xxx031-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1562491005771mobile_and_24hr_service-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/15624973412441.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/15624973840831.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/15624974094721.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/15624974354771.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/15624974533611.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/15624982639091.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/15624983647271.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1565675114864laptope_013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1565675123009laptope_013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/service-image/1565675142556laptope_013.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +50,8 @@
     <session id="-1011003269">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="70" />
-          <entry key="project.open.time.0" value="18" />
+          <entry key="project.closed" value="72" />
+          <entry key="project.open.time.0" value="20" />
           <entry key="project.open.time.1" value="14" />
           <entry key="project.open.time.10" value="6" />
           <entry key="project.open.time.11" value="7" />
@@ -45,14 +65,14 @@
           <entry key="project.open.time.7" value="13" />
           <entry key="project.open.time.8" value="8" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="86" />
+          <entry key="project.opened" value="88" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="2" />
           <entry key="jpg" value="8" />
-          <entry key="js" value="388" />
+          <entry key="js" value="391" />
           <entry key="json" value="3" />
           <entry key="png" value="2" />
         </counts>
@@ -62,13 +82,13 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="10" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="388" />
+          <entry key="JavaScript" value="391" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="2" />
-          <entry key="js" value="28801" />
+          <entry key="js" value="28802" />
           <entry key="json" value="56" />
         </counts>
       </usages-collector>
@@ -76,7 +96,7 @@
         <counts>
           <entry key="HTML" value="2" />
           <entry key="JSON" value="56" />
-          <entry key="JavaScript" value="28801" />
+          <entry key="JavaScript" value="28802" />
         </counts>
       </usages-collector>
     </session>
@@ -93,19 +113,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/configApp.js">
+        <entry file="file://$PROJECT_DIR$/app/controllers/section.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="15" />
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/configApp.js">
+        <entry file="file://$PROJECT_DIR$/app/controllers/category.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-685">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="208">
+              <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -161,7 +181,6 @@
         <option value="$PROJECT_DIR$/app/models/sale.js" />
         <option value="$PROJECT_DIR$/app/controllers/sale.js" />
         <option value="$PROJECT_DIR$/app/controllers/address.js" />
-        <option value="$PROJECT_DIR$/app/controllers/section.js" />
         <option value="$PROJECT_DIR$/app/controllers/order.js" />
         <option value="$PROJECT_DIR$/app/models/order.js" />
         <option value="$PROJECT_DIR$/index.js" />
@@ -177,6 +196,7 @@
         <option value="$PROJECT_DIR$/config/routes.js" />
         <option value="$PROJECT_DIR$/app/models/configApp.js" />
         <option value="$PROJECT_DIR$/app/controllers/configApp.js" />
+        <option value="$PROJECT_DIR$/app/controllers/section.js" />
       </list>
     </option>
   </component>
@@ -377,11 +397,13 @@
       <workItem from="1566197339166" duration="4455000" />
       <workItem from="1566215667032" duration="2262000" />
       <workItem from="1566281880536" duration="12308000" />
+      <workItem from="1566390406237" duration="892000" />
+      <workItem from="1567332331259" duration="2670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324210000" />
+    <option name="totallyTimeSpent" value="327772000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -397,11 +419,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15683647" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16085792" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49932885" weight="0.7177305" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49932885" weight="0.71711457" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3286119" />
@@ -542,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/section.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/express.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -661,21 +676,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/1566287231561FqgNvRov50Y41rFnRIgfCg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/1566287231564FqgNvRov50Y41rFnRIgfCg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/1566287247017FqgNvRov50Y41rFnRIgfCg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/1566287822483Zmej-gory-ny-ch-sochi-park-4-min.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config/1566287822479original24721296.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/config/1566287231561FqgNvRov50Y41rFnRIgfCg.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/config/1566287231564FqgNvRov50Y41rFnRIgfCg.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/config/1566287247017FqgNvRov50Y41rFnRIgfCg.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/config/1566287822483Zmej-gory-ny-ch-sochi-park-4-min.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/config/1566287822479original24721296.jpg" />
     <entry file="file://$PROJECT_DIR$/app/middleware/uploadConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -683,24 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/category.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="78" selection-start-line="78" selection-end-line="81" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-767">
           <caret line="14" column="57" lean-forward="true" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/configApp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -713,8 +704,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/configApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
+        <state relative-caret-position="256">
           <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/configApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/section.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
         </state>
       </provider>
     </entry>
